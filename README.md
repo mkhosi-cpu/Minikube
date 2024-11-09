@@ -19,11 +19,13 @@ minikube start --driver=docker --memory=4096 --cpus=2
 
 - Create Namespaces
 kubectl apply -f test-namespace.yaml
+
 kubectl apply -f prod-namespace.yaml
 
 - Deploy Applications
 # Deploy test environment
 kubectl apply -f deployment-test.yaml
+
 kubectl apply -f service-test.yaml
 
 # Deploy production environment
@@ -33,10 +35,12 @@ kubectl apply -f service-prod.yaml
 - Verify Deployments
 # Check test namespace
 kubectl get pods -n test
+
 kubectl get services -n test
 
 # Check production namespace
 kubectl get pods -n production
+
 kubectl get services -n production
 
 - Access the Applications
